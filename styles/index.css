@@ -228,3 +228,51 @@ form {
   /* Interactive */
   cursor: not-allowed;
 }
+
+/* --------------------------------
+ * Responsive Design
+ * -------------------------------- */
+
+@media (min-width: 40rem) {
+  .container {
+    flex-direction: row;
+    padding: var(--spacing-500);
+    border-radius: 1.5rem;
+  }
+
+  form {
+    flex: 1 1 50%;
+  }
+
+  .results {
+    flex: 1 1 50%;
+    gap: var(--spacing-500);
+  }
+
+  .results button {
+    margin-top: auto;
+  }
+}
+
+@media (min-width: 64rem) {
+  body {
+    justify-content: center;
+    gap: var(--spacing-500);
+  }
+
+  header {
+    padding-block: 0 var(--spacing-500);
+  }
+
+  .container {
+    width: 60%;
+  }
+
+  .tip-selector {
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  }
+
+  .results {
+    padding-inline: var(--spacing-500);
+  }
+}
