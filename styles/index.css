@@ -154,7 +154,7 @@ form {
 /* Tip Button States */
 .tip-selector button:hover,
 .tip-selector button:focus,
-.tip-selector button[aria-pressed="true"] {
+.tip-selector button[aria-selected="true"] {
   /* Interactive */
   cursor: pointer;
   outline: none;
