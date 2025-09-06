@@ -219,6 +219,13 @@ form {
   color: var(--color-green-900);
 }
 
+.results button:hover {
+  /* Interactive */
+  cursor: pointer;
+  /* Visual */
+  filter: brightness(1.2);
+}
+
 .results button:disabled {
   /* Visual */
   background-color: var(--color-grey-400);
