@@ -1,2 +1,230 @@
 @import url("./base.css");
 @import url("./theme.css");
+
+/* --------------------------------
+ * Layout & Page Structure
+ * -------------------------------- */
+body {
+  /* Layout & Position */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Box Model */
+  min-height: 100vh;
+  /* Visual */
+  background-color: var(--color-grey-200);
+}
+
+header {
+  /* Layout & Position */
+  display: flex;
+  justify-content: center;
+  /* Box Model */
+  padding-block: var(--spacing-500);
+}
+
+.container {
+  /* Layout & Position */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Box Model */
+  width: 100%;
+  padding: var(--spacing-400) var(--spacing-300);
+  gap: var(--spacing-400);
+  /* Visual */
+  border-radius: 1.5rem 1.5rem 0 0;
+  background-color: var(--color-white);
+}
+
+/* --------------------------------
+ * Form Elements
+ * -------------------------------- */
+form {
+  /* Layout & Position */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  /* Box Model */
+  gap: var(--spacing-400);
+}
+
+/* Form Field Base */
+.form-field {
+  /* Layout & Position */
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  /* Box Model */
+  gap: var(--spacing-100);
+}
+
+/* Form Labels & Error Messages */
+.form-field__label {
+  /* Layout & Position */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  /* Typography */
+  font: var(--text-caption);
+  /* Visual */
+  color: var(--color-grey-500);
+}
+
+.form-field__label .error-message {
+  /* Typography */
+  font: var(--text-caption);
+  color: red;
+}
+
+/* Input Fields */
+.form-field input {
+  /* Box Model */
+  width: 100%;
+  padding: var(--spacing-100) var(--spacing-200);
+  /* Visual */
+  border-radius: 0.5rem;
+  background-color: var(--color-grey-50);
+  /* Typography */
+  text-align: right;
+  font: var(--text-body);
+  color: var(--color-green-900);
+  /* Interactive */
+  caret-color: var(--color-green-400);
+}
+
+/* Hide Number Input Spinners */
+.form-field input::-webkit-outer-spin-button,
+.form-field input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Input States */
+.form-field input::placeholder {
+  color: var(--color-grey-400);
+}
+
+.form-field input:focus,
+.form-field input:hover {
+  outline: 2px solid var(--color-green-400);
+  cursor: pointer;
+}
+
+/* Input Icons */
+.form-field input[name="bill"] {
+  /* Background */
+  background-image: url("../images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: left var(--spacing-200) center;
+  background-size: 0.75rem cover;
+}
+
+.form-field input[name="people"] {
+  /* Background */
+  background-image: url("../images/icon-person.svg");
+  background-repeat: no-repeat;
+  background-position: left var(--spacing-200) center;
+  background-size: 0.75rem cover;
+}
+
+/* --------------------------------
+ * Tip Selector
+ * -------------------------------- */
+.tip-selector {
+  /* Layout & Position */
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  /* Box Model */
+  gap: var(--spacing-200);
+}
+
+.tip-selector button {
+  /* Visual */
+  border-radius: 0.25rem;
+  background-color: var(--color-green-900);
+  /* Typography */
+  text-align: center;
+  font: var(--text-body);
+  color: var(--color-white);
+}
+
+/* Tip Button States */
+.tip-selector button:hover,
+.tip-selector button:focus,
+.tip-selector button[aria-pressed="true"] {
+  /* Interactive */
+  cursor: pointer;
+  outline: none;
+  /* Visual */
+  background-color: var(--color-green-400);
+  filter: brightness(1.2);
+  /* Typography */
+  color: var(--color-green-900);
+}
+
+/* --------------------------------
+ * Results Section
+ * -------------------------------- */
+.results {
+  /* Layout & Position */
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  /* Box Model */
+  padding: var(--spacing-500) var(--spacing-300) var(--spacing-300);
+  gap: var(--spacing-300);
+  /* Visual */
+  border-radius: 1rem;
+  background-color: var(--color-green-900);
+}
+
+/* Result Item */
+.result {
+  /* Layout & Position */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result__label p {
+  /* Typography */
+  font: var(--text-caption);
+  color: var(--color-white);
+}
+
+.result__label span {
+  /* Typography */
+  font: var(--text-label);
+  color: var(--color-grey-400);
+}
+
+.result__value {
+  /* Typography */
+  font: var(--text-display);
+  color: var(--color-green-400);
+}
+
+/* Reset Button */
+.results button {
+  /* Box Model */
+  padding: var(--spacing-100);
+  /* Visual */
+  border-radius: 0.5rem;
+  background-color: var(--color-green-400);
+  /* Typography */
+  font: var(--text-button);
+  color: var(--color-green-900);
+}
+
+.results button:disabled {
+  /* Visual */
+  background-color: var(--color-grey-400);
+  opacity: 0.5;
+  /* Typography */
+  color: var(--color-grey-500);
+  /* Interactive */
+  cursor: not-allowed;
+}
