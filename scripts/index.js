@@ -38,6 +38,13 @@ const updateDisplay = () => {
   const numberOfPeople = parseInt(form.people.value) || 0;
   const tipPercentage = getTipPercentage();
 
+  if (billAmount && tipPercentage && numberOfPeople === 0) {
+    document.getElementById("people-error").textContent = "Can't be zero";
+    return;
+  } else {
+    document.getElementById("people-error").textContent = "";
+  }
+
   const { tipPerPerson, totalPerPerson } = calculateTip(
     billAmount,
     tipPercentage,
