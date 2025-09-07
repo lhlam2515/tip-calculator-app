@@ -81,7 +81,6 @@ tipSelector.addEventListener("input", (event) => {
 resetButton.addEventListener("click", () => {
   form.reset();
 
-  const buttons = tipSelector.querySelectorAll("button");
   tipButtons.forEach((button) => {
     button.ariaSelected = "false";
   });
